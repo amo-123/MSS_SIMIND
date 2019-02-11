@@ -1,6 +1,6 @@
 # source centred at Double slit
-simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-10./26:1000/29:1 mss_line_twoslit_500count1
-simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-7.5/26:1000/29:1 mss_line_twoslit_500count2
+simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-10./26:500/29:1 mss_line_twoslit_500count1
+simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-7.5/26:500/29:1 mss_line_twoslit_500count2
 # simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-5.0/26:1000/29:1 mss_line_twoslit_milcount3%1
 # simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-2.5/26:1000/29:1 mss_line_twoslit_milcount4%1
 # simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:0.00/26:1000/29:1 mss_line_twoslit_milcount5%1
