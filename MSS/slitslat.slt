@@ -1,0 +1,19 @@
+0.45                    Space between collimator and detector
+3 	                Number of slit-rows
+0.025                   Slat-thickness 
+0.125                   Slat-aperture
+10.0                    Slat-length (Y)
+1.05                    Slit-height Lower part relative to slit edge (Z)
+1.6                     Slit-height Upper part relative to slit edge (Z)
+0.6,0.0,0.6             Slit-shift (X)
+0.0,1.497,2.33          Slit-shift (Y)
+ 19.33, 27.71,25.02     Slit-angles A
+-19.33,-10.02,6.6       Slit-angles B
+0.075,0.075,0.075       Slit apertures
+0.6,0.6,0.6             Slit-lengths (X)
+0.6,0.6,0.6             Slit-thickness between apertures (X) 
+
+# Comments
+
+# X means a direction in the axial direction. Compare to a SPECT where
+# the X direction is along the patient from feet to head.
