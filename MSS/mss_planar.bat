@@ -12,7 +12,7 @@ rem simind slitslat/26:80/x6:w/14:4/15:4/tr:5/02:5/03:0.001/04:0.001/18:10.0/26:
 rem simind slitslat/26:80/x6:w/14:4/15:7/fz:cbf/tr:5/if:bar/26:200 slitslat_bar slitslat.cor%1
 rem simind slitslat/26:80/x6:w/14:4/15:7/fz:cbf/tr:5/if:jaszak/26:200 slitslat_sphere slitslat.cor%1
 
-simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-10./26:1000/29:1 test_fileoutput%1
+rem simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-10./26:1000/29:1 test_fileoutput%1
 rem simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-7.5/26:1000/29:1 mss_line_twoslit_milcount2%1
 rem simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-5.0/26:1000/29:1 mss_line_twoslit_milcount3%1
 rem simind slitslat/26:80/x6:w/14:4/15:2/tr:5/03:5/02:0.001/04:0.001/18:-2.5/26:1000/29:1 mss_line_twoslit_milcount4%1
