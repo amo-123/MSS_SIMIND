@@ -34,13 +34,13 @@ opts.StartPoint = [0.162076065204019 43.5 1.94523334739479];
 % Fit model to data.
 [fitresult, ~] = fit( xData, yData, ft, opts );
 % Plot fit with data.
-figure( 'Name', 'untitled fit 1' );
-h = plot( fitresult, xData, yData );
-legend( h, 'datx vs. X_dim', 'untitled fit 1', 'Location', 'NorthEast' );
-% Label axes
-xlabel X_dim
-ylabel datx
-grid on
+% figure( 'Name', 'untitled fit 1' );
+% h = plot( fitresult, xData, yData );
+% legend( h, 'datx vs. X_dim', 'untitled fit 1', 'Location', 'NorthEast' );
+% % Label axes
+% xlabel X_dim
+% ylabel datx
+% grid on
 
 order = fitresult.c1;
 sigma = order/sqrt(2);
