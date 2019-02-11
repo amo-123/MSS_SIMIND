@@ -16,7 +16,11 @@ img8 = read_interfile();
 %%
 img9 = read_interfile();
 %%
-[FWHM] = SumAndFit(img.dat,1);
+[x1,x2,y1,y2] = BoxCoord(img.dat,2);
+
+%%
+[FWHM] = SumAndFit(img.dat,1,x1,x2,y1,y2);
+%%
 [FWHM2] = SumAndFit(img2.dat,1);
 [FWHM3] = SumAndFit(img3.dat,1);
 [FWHM4] = SumAndFit(img4.dat,1);
