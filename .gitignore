@@ -10,3 +10,11 @@ MSS/intruktion\.txt
 simind/
 
 *.asv
+
+Python/\.idea/
+
+Python/venv/Lib/site-packages/
+
+Python/venv/Scripts/
+
+Python/venv/
