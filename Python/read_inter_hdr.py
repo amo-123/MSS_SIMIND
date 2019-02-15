@@ -1,5 +1,7 @@
-# read header file
-def read_inter_hdr(fp,fn):
+import os
+
+
+def read_inter_hdr(fp, fn):
     # Read interfile header file
     # Extract meta data from Image
     # Input:
@@ -7,6 +9,8 @@ def read_inter_hdr(fp,fn):
     #   fn = file name
     # Output:
     #   hdr = meta data (structure)
+    # Author :
+    # A.Morahan (UCL), adapted from K.Erlandsson (UCL)
 
     # lab : The labels of interest contained within the header file and their associated tags
     lab = {'name of data file': 'fn_dat',
@@ -26,12 +30,12 @@ def read_inter_hdr(fp,fn):
     print('Reading File: {}'.format(fn))
 
     # fid : File id given by fn and fp
-    path = fp + '\\' + fn
+    path = os.path.join(fp, fn)
     try:
         fid = open(path, 'r')
     except NameError:
         print('Error Opening File')
-        return [0]
+        return
     else:
         # read each line of open file, until the end
         with fid as f:  # read line with 'with'
@@ -67,7 +71,7 @@ def read_inter_hdr(fp,fn):
 
     hdr['vox'] = [tmp['vx'], tmp['vy'], tmp['vz']]
 
-    return [hdr]
+    return hdr
 
 
 def d_val(s2):
@@ -76,7 +80,12 @@ def d_val(s2):
         val = int(float(s2))
         return val
     except ValueError:  # otherwise strip white space from string
-        val = s2.strip
+        val = s2.strip()
         return val
 
 
+hdr = read_inter_hdr('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
+
+print(hdr['dim'])
+
+# print(hdr['n_byt'])

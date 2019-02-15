@@ -1,7 +1,7 @@
 # Image Analysis Class
 
 
-class ImagAnalysis:
+class ImageAnalysis:
 
     def __init__(self, fp, fn):
         self.fp = fp
