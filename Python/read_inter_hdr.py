@@ -23,7 +23,8 @@ def read_inter_hdr(fp, fn):
            'matrix size [3]': 'nz',
            'scaling factor (mm/pixel) [1]': 'vx',
            'scaling factor (mm/pixel) [2]': 'vy',
-           'scaling factor (mm/pixel) [3]': 'vz'}
+           'scaling factor (mm/pixel) [3]': 'vz'
+           }
 
     tmp = {}
 
@@ -54,11 +55,13 @@ def read_inter_hdr(fp, fn):
         tmp['vz'] = 0
     # Assign values to header dictionary
     hdr = {'fp': fp,
-           'fn': fn}
+           'fn': fn
+           }
     lst = ['name of data file',
            'data description',
            'number of bytes per pixel',
-           'image duration']
+           'image duration'
+           ]
     # list of keys of interest
 
     for key in lst:
@@ -84,8 +87,8 @@ def d_val(s2):
         return val
 
 
-hdr = read_inter_hdr('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
+hedr = read_inter_hdr('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
 
-print(hdr['dim'])
+print(hedr['dim'])
 
-# print(hdr['n_byt'])
+# print(hedr['n_byt'])

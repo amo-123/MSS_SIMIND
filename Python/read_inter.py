@@ -1,6 +1,8 @@
 import read_inter_hdr
 import os
 import numpy as np
+import json
+#from matplotlib import pyplot as plt
 
 
 def read_inter(fp, fn):
@@ -16,7 +18,8 @@ def read_inter(fp, fn):
     prec = {1: np.uint8,
             2: np.uint16,
             4: np.uint32,
-            8: np.uint64}
+            8: np.uint64
+            }
 
     try:
         hdr = read_inter_hdr.read_inter_hdr(fp, fn)
@@ -26,23 +29,26 @@ def read_inter(fp, fn):
     else:
         img = {'fp': hdr['fp'],
                'fn': hdr['fn_dat'],
-               'hdr': hdr}
+               'hdr': hdr
+               }
 
         print('Reading File: {}'.format(img['fn']))
         path = os.path.join(fp, fn)
         try:
-            fid = open(path, 'rb')
+            with open(path, 'r') as fid:
+                img['dat'] = fid.read()
         except NameError:
             print('Error Opening File')
         else:
-            print(prec[hdr['n_byt']])
-            img['dat'] = np.fromfile(fid, dtype=prec[hdr['n_byt']], count=np.prod(hdr['dim']))
             fid.close()
-
-    #img['dat'].shape = (np.prod(hdr['dim']), 1)
-    print(np.shape(img['dat']))
 
     return img
 
 
-read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
+imageD = read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
+
+
+print(imageD['dat'])
+
+Data = imageD['dat']
+
