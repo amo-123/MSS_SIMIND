@@ -1,7 +1,7 @@
 import read_inter_hdr
 import os
 import numpy as np
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 
 def read_inter(fp, fn):
@@ -12,7 +12,7 @@ def read_inter(fp, fn):
     # Output:
     #   img = Image data (structure)
     # Author :
-    # A.Morahan (UCL), adapted from K.Erlandsson (UCL)
+    # A. Morahan (UCL), adapted from K. Erlandsson (UCL)
 
     prec = {1: np.uint8,
             2: np.uint16,
@@ -22,7 +22,7 @@ def read_inter(fp, fn):
 
     try:
         hdr = read_inter_hdr.read_inter_hdr(fp, fn)
-    except NameError:
+    except FileNotFoundError:
         print('Specify Path Name and File Name')
         return
     else:
@@ -34,24 +34,21 @@ def read_inter(fp, fn):
         print('Reading File: {}'.format(img['fn']))
         path = os.path.join(fp, img['fn'])
         try:
-            with open(path, 'rb') as fid:
-                dat = np.fromfile(fid, dtype=prec[hdr['n_byt']], count=np.prod(hdr['dim']))
-
-        except NameError:
+            fid = open(path, 'rb')
+            dat = np.fromfile(fid, dtype=prec[hdr['n_byt']], count=int(np.prod(hdr['dim'])))
+        except FileNotFoundError:
             print('Error Opening File')
         else:
-            # fid.close()
-            # img['dat'] = struct.unpack_from('<I', dat)
-            img['dat'] = np.reshape(dat, hdr['dim'])
-            print(np.shape(img['dat']))
+            fid.close()
+            img['dat'] = np.squeeze(np.reshape(dat, np.flipud(hdr['dim'])))
 
     return img
 
 
-imageD = read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
+# imageD = read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
 
 
-Data = imageD['dat']
+# Data = imageD['dat']
 
-plt.imshow(Data[:, :, 0])
-plt.show()
+# plt.imshow(Data[:, :])
+# plt.show()

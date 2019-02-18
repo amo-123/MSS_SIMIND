@@ -10,7 +10,7 @@ def read_inter_hdr(fp, fn):
     # Output:
     #   hdr = meta data (structure)
     # Author :
-    # A.Morahan (UCL), adapted from K.Erlandsson (UCL)
+    # A. Morahan (UCL), adapted from K. Erlandsson (UCL)
 
     # lab : The labels of interest contained within the header file and their associated tags
     lab = {'name of data file': 'fn_dat',
@@ -34,9 +34,8 @@ def read_inter_hdr(fp, fn):
     path = os.path.join(fp, fn)
     try:
         fid = open(path, 'r')
-    except NameError:
+    except FileNotFoundError:
         print('Error Opening File')
-        return
     else:
         # read each line of open file, until the end
         with fid as f:  # read line with 'with'
@@ -87,8 +86,8 @@ def d_val(s2):
         return val
 
 
-hedr = read_inter_hdr('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
+# hedr = read_inter_hdr('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
 
-print(hedr['dim'])
+# print(hedr['dim'])
 
-print(hedr['n_byt'])
+# print(hedr['n_byt'])
