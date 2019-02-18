@@ -35,12 +35,13 @@ def read_inter(fp, fn):
         print('Reading File: {}'.format(img['fn']))
         path = os.path.join(fp, fn)
         try:
-            with open(path, 'r') as fid:
-                img['dat'] = fid.read()
+            with open(path, 'rb') as fid:
+                img['dat'] = fid.read(hdr['n_byt'])
         except NameError:
             print('Error Opening File')
         else:
-            fid.close()
+            # fid.close()
+            print(np.size(img['dat']))
 
     return img
 
@@ -48,7 +49,7 @@ def read_inter(fp, fn):
 imageD = read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
 
 
-print(imageD['dat'])
+
 
 Data = imageD['dat']
 
