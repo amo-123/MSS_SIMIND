@@ -1,6 +1,7 @@
 import read_inter_hdr
 import os
 import numpy as np
+import struct
 import json
 #from matplotlib import pyplot as plt
 
@@ -36,19 +37,18 @@ def read_inter(fp, fn):
         path = os.path.join(fp, fn)
         try:
             with open(path, 'rb') as fid:
-                img['dat'] = fid.read(hdr['n_byt'])
+                dat = fid.read(hdr['n_byt'])
         except NameError:
             print('Error Opening File')
         else:
             # fid.close()
-            print(np.size(img['dat']))
+            img['dat'] = struct.unpack_from('<I', dat)
+            print(img['dat'])
 
     return img
 
 
 imageD = read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Python', 'mss_line_twoslit1.h00')
-
-
 
 
 Data = imageD['dat']

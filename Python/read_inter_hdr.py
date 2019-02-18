@@ -91,4 +91,4 @@ hedr = read_inter_hdr('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\P
 
 print(hedr['dim'])
 
-# print(hedr['n_byt'])
+print(hedr['n_byt'])

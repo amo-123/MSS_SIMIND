@@ -20,3 +20,5 @@ Python/venv/Scripts/
 Python/venv/
 
 Python/__pycache__/read_inter_hdr\.cpython-36\.pyc
+
+*.pyc
