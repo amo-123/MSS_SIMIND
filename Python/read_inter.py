@@ -34,15 +34,14 @@ def read_inter(fp, fn):
         print('Reading File: {}'.format(img['fn']))
         path = os.path.join(fp, img['fn'])
         try:
-            with open(path, 'rb') as fid:
-                dat = np.fromfile(fid, dtype=prec[hdr['n_byt']], count=np.prod(hdr['dim']))
+            fid = open(path, 'rb')
+            dat = np.fromfile(fid, dtype=prec[hdr['n_byt']], count=np.prod(hdr['dim']))
 
         except NameError:
             print('Error Opening File')
         else:
-            # fid.close()
-            # img['dat'] = struct.unpack_from('<I', dat)
-            img['dat'] = np.reshape(dat, hdr['dim'])
+            fid.close()
+            img['dat'] = np.squeeze(np.reshape(dat, np.flipud(hdr['dim'])))
             print(np.shape(img['dat']))
 
     return img
@@ -53,5 +52,5 @@ imageD = read_inter('C:\\Users\\Ashley\\Documents\\Local_SIMIND\\MSS_SIMIND\\Pyt
 
 Data = imageD['dat']
 
-plt.imshow(Data[:, :, 0])
+plt.imshow(Data[:, :])
 plt.show()
