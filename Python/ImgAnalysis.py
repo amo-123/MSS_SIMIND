@@ -82,4 +82,8 @@ img.view_data()
 
 img.check_load()
 
+pth = img.get_path()
+
+print(pth)
+
 print(img.num_of_files)
