@@ -18,3 +18,9 @@ Python/venv/Lib/site-packages/
 Python/venv/Scripts/
 
 Python/venv/
+
+*.pdf
+
+*.jpg
+
+*.lmf

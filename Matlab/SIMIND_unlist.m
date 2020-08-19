@@ -77,8 +77,8 @@ function [img] = SIMIND_unlist( fp, fn )
     figure;
     for i = 1 : 4
     subplot(2,2,i)
-    dd = img.dat(:,:,i);
-    imagesc(dd,[0,max(dd(:))/3]); colorbar
+    dd = img.dat(:,:,i)*fra.n_ev;
+    imagesc(dd,[0,max(dd(:))/3]); colorbar; caxis([0 200]);
     xlabel(['DOI Layer: ',int2str(i)]);
     end
 end
