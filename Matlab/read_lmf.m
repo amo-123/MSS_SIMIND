@@ -29,9 +29,9 @@ function [fra] = read_lmf( fp1, fn1 )
     for i_ev=1:nn
         
         %xyze = fread( fid, 10, 'int16' );
-        xyze = fread( fid, 4, 'int16' );
-        wei = fread( fid, 1, 'double' );
-        ord = fread( fid, 1, 'uint8' );
+        xyze = fread( fid, 4, 'int16', 'a');
+        wei = fread( fid, 1, 'double', 'a');
+        ord = fread( fid, 1, 'uint8', 'a');
         if feof( fid ), L_eof=1; break, end
         %if ( xyze(10) == npr ), ip=ip+1; break, end
         if ( xyze(4) == npr ), ip=ip+1; break, end
