@@ -30,3 +30,7 @@ Python/venv/
 *.png
 
 *.bim
+
+*.pptx#
+
+*.fig

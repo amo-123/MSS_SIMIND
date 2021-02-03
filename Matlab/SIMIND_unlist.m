@@ -85,7 +85,7 @@ function [img, nimg, fra] = SIMIND_unlist( fp, fn, act )
         subplot(2,2,i)
 %        dd = img.dat(:,:,i,j)*act;
         dd = img.dat(:,:,i)*act;
-        imagesc(dd,[0,max(dd(:))/3]); axis image; colorbar; caxis([0 mean(mean(nonzeros(sum(img.dat,3))))*act]);
+        imagesc(dd,[0,max(dd(:))/3]); axis image; colorbar; caxis([0 mean(mean(nonzeros(sum(img.dat(:,:,:),3))))*act]);
         xlabel(['DOI Layer: ',int2str(5-i)]);
         title(fn);
         
@@ -98,8 +98,9 @@ function [img, nimg, fra] = SIMIND_unlist( fp, fn, act )
 %         title('Poisson Noise');
     end
 % end
-    figure, imagesc(sum(img.dat,3)*act); axis image; colorbar; caxis([0 mean(mean(nonzeros(sum(img.dat,3))))*act]);
+    figure, imagesc(img.dat(:,:,1)*act); axis image; colorbar; caxis([0 mean(mean(nonzeros(sum(img.dat(:,:,:,1),3))))*act]);
    title(fn);
+%   figure, plot(squeeze(sum(sum(img.dat),4)));
 % %     figure, imagesc(sum(nimg,3)); colorbar; caxis([0 mean(mean(nonzeros(sum(nimg,3))))]);
 % %     title('Poisson Noise');
     
